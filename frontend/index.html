@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navya weds Karun Kumar</title>
     <!-- Importing an elegant font for the wedding theme -->
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+Telugu:wght@400;700&display=swap" rel="stylesheet">
     <!-- Linking the external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
@@ -40,10 +40,100 @@
 
     <!-- 1. Invitation Tab -->
     <div id="Invitation" class="tab-content" style="display: block;">
-        <div class="details-card">
-            <h2>Welcome</h2>
-            <p>Together with their loving families, <strong>Navya</strong> and <strong>Karun Kumar</strong> request the honor of your presence to celebrate the beginning of their new life together.</p>
-            <p>Please browse the tabs above to find all the details regarding the marriage ceremony and the reception. We can't wait to see you there!</p>
+        
+        <!-- Sub-tabs for Language -->
+        <div class="lang-tabs">
+            <button class="lang-btn active">Telugu</button>
+            <button class="lang-btn">English</button>
+        </div>
+
+        <!-- Wrapper for Sticky Elements -->
+        <div class="patrika-wrapper">
+            
+            <!-- Left Tracking Elephant -->
+            <div class="elephant-container sticky-left">
+                <img src="elephant.png" class="realistic-elephant" alt="Elephant">
+                <div class="poola-maala">🌺🌿🌺</div>
+            </div>
+
+        <!-- The Traditional Patrika Card -->
+        <div class="details-card patrika-card">
+            
+            <!-- Traditional Decorations (Toranam, Arati Chettu & Elephants) -->
+            <div class="toranam-garland"></div>
+            <div class="banana-tree tree-left"></div>
+            <div class="banana-tree tree-right"></div>
+
+            <!-- Auspicious Header -->
+            <div class="auspicious-header">
+                <p class="srirastu">శ్రీరస్తు శుభమస్తు అవిఘ్నమస్తు</p>
+                <!-- Ganesha shaped as Om -->
+                <svg class="ganesha-om-svg" viewBox="0 0 100 100" width="70" height="70" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Om loops mimicking trunk and head -->
+                    <path d="M 25 40 C 15 40 15 55 25 55 C 35 55 40 50 45 45 C 50 40 50 30 45 25 C 35 15 20 25 25 35" fill="none" stroke="#e65c00" stroke-width="5" stroke-linecap="round"/>
+                    <path d="M 45 45 C 60 35 75 40 70 55 C 65 70 50 75 45 65 C 40 55 55 50 60 60" fill="none" stroke="#e65c00" stroke-width="5" stroke-linecap="round"/>
+                    <!-- Bindu / Tilak -->
+                    <circle cx="65" cy="20" r="5" fill="#e65c00"/>
+                    <path d="M 50 25 C 60 15 70 15 80 25" fill="none" stroke="#e65c00" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+            </div>
+
+            <h2 class="patrika-title">వివాహ మహోత్సవ ఆహ్వాన శుభలగ్న పత్రిక</h2>
+            
+            <div class="floral-divider">❁ ❀ ❁</div>
+
+            <!-- Date & Panchangam -->
+            <div class="muhurtham-section">
+                <p class="panchangam">స్వస్తిశ్రీ చాంద్రమానేన శ్రీ పరాభవ నామ సంవత్సర<br>చైత్ర మాస బహుళ అష్టమి</p>
+                <p class="muhurtham-date">ది. 10-04-2026 శుక్రవారం రాత్రి గం. 9:09 ని.లకు</p>
+                <p class="lagna">ఉత్తరాషాడ నక్షత్రయుక్త వృశ్చిక లగ్న<br>పుష్కరాంశ శుభ ముహూర్తము నందు</p>
+            </div>
+
+            <p class="ekaika-putrika">మా ఏకైక పుత్రిక</p>
+
+            <!-- Bride & Groom -->
+            <div class="couple-details">
+                <div class="bride">
+                    <p class="prefix">వధువు : చి|| ల|| సౌ||</p>
+                    <h3 class="traditional-name">నవ్య</h3>
+                    <p class="qualification">M.Sc Investigative Ophthalmology</p>
+                    <p class="parents">రెడ్డి శివరామయ్య మరియు<br>రెడ్డి రత్న కుమారి గార్ల కుమార్తె</p>
+                </div>
+                
+                <div class="parinayam">పరిణయం</div>
+
+                <div class="groom">
+                    <p class="prefix">వరుడు : చి||</p>
+                    <h3 class="traditional-name">కరుణ్ కుమార్</h3>
+                    <p class="qualification">M.S Cyber Security</p>
+                    <p class="parents">కరుకుమల్లి శ్రీనివాసరావు మరియు<br>కరుకుమల్లి నాగ లక్ష్మి గార్ల కుమారుడు</p>
+                </div>
+            </div>
+
+            <div class="floral-divider">❁ ❀ ❁</div>
+
+            <!-- Vinnapam -->
+            <div class="vinnapam-section">
+                <h4 class="vinnapam-title">విన్నపం</h4>
+                <p class="vinnapam-text">మంగళప్రదమైన వేళలో మాధుర్యమై కలిసిన రెండు హృదయాలు వేద మంత్రాల సాక్షిగా వైవాహిక బంధమై వికసించనున్నది.<br>పెద్దల దీవెనల మధ్య కళ్యాణ శుభసమయంలో మీరు మీ కుటుంబ సమేతంగా విచ్చేసి నూతన వధూవరులను ఆశీర్వదించగలరు.</p>
+            </div>
+
+            <div class="floral-divider">❁ ❀ ❁</div>
+
+            <!-- Venue -->
+            <div class="venue-section">
+                <h4>కళ్యాణ వేదిక</h4>
+                <p>వి స్క్వేర్ కళ్యాణ మండపం, మల్కాపురం,<br>తుళ్లూరు మండలం, గుంటూరు జిల్లా</p>
+            </div>
+
+        </div>
+
+            <!-- Right Tracking Elephant -->
+            <div class="elephant-container sticky-right">
+                <img src="elephant.png" class="realistic-elephant" alt="Elephant">
+                <div class="poola-maala">🌺🌿🌺</div>
+            </div>
+
         </div>
     </div>
 

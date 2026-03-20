@@ -8,6 +8,7 @@ body {
     background-size: cover;
     color: #333;
     text-align: center;
+    overflow-x: hidden; /* Prevents scrollbars from the decorative leaves */
 }
 
 /* Header / Hero Section */
@@ -167,4 +168,265 @@ h2 {
     margin-bottom: 20px;
     border-bottom: 1px solid #d9a05b;
     padding-bottom: 10px;
+}
+
+/* --- TRADITIONAL INVITATION STYLES --- */
+
+/* Language Switcher inside Invitation Tab */
+.lang-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.lang-btn {
+    background: transparent;
+    border: 1px solid #d9a05b;
+    color: #8a252c;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.lang-btn.active, .lang-btn:hover {
+    background: #8a252c;
+    color: #fcebd5;
+}
+
+/* Wrapper to keep elephants with Patrika */
+.patrika-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    gap: 10px;
+}
+
+/* Traditional Patrika Card */
+.patrika-card {
+    /* Soft golden yellow + mandala texture */
+    background: 
+        linear-gradient(rgba(255, 248, 231, 0.94), rgba(255, 242, 217, 0.94)),
+        url('https://www.transparenttextures.com/patterns/arabesque.png');
+    background-size: cover, auto;
+    font-family: 'Noto Serif Telugu', serif;
+    border-radius: 4px;
+    border: 2px solid #8a252c; /* Outer Kumkum border */
+    outline: 4px double #d9a05b; /* Inner traditional golden double border */
+    outline-offset: -16px; /* Pushes the outline inside the card */
+    padding: 60px 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15), inset 0 0 50px rgba(217, 160, 91, 0.2); /* Creates a thick paper effect */
+    max-width: 600px;
+    position: relative;
+    z-index: 1; /* Creates a stacking context for the decorations */
+}
+
+/* Distinct Tirupati Gopuram Watermark */
+.patrika-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* Real Photorealistic Gopuram Watermark */
+    background: url('sri-ranganatha-swamy-temple-srirangam-600nw-2559794751.jpg') center center no-repeat;
+    background-size: cover;
+    opacity: 0.08; /* Reduced opacity for a softer, cleaner watermark */
+    mix-blend-mode: multiply; /* Blends the image naturally into the golden card */
+    z-index: -1; /* Puts the Gopuram exactly behind the text */
+    pointer-events: none;
+    border-radius: 4px; /* Matches the card borders */
+}
+
+.auspicious-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Reduced gap */
+    color: #cc3333; /* Vermilion / Kumkum */
+    margin-bottom: 15px; /* Reduced margin */
+}
+.srirastu {
+    font-weight: bold;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    margin: 0;
+}
+.ganesha-om-svg {
+    display: block;
+    filter: drop-shadow(1px 2px 2px rgba(230, 92, 0, 0.2));
+}
+
+.patrika-title {
+    color: #8a252c;
+    font-size: 1.8em;
+    margin: 10px 0; /* Tightened spacing */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.floral-divider {
+    color: #d9a05b;
+    font-size: 1.5em;
+    margin: 10px 0; /* Tightened spacing */
+    letter-spacing: 10px;
+}
+
+.muhurtham-section {
+    margin: 15px 0; /* Reduced margin */
+    line-height: 1.5; /* Reduced line-height for tighter sentences */
+}
+.muhurtham-date {
+    color: #8a252c;
+    font-weight: bold;
+    font-size: 1.2em;
+    background: rgba(217, 160, 91, 0.15);
+    padding: 8px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.ekaika-putrika {
+    font-style: italic;
+    color: #5a4b42;
+    margin-top: 15px; /* Reduced margin */
+}
+
+.traditional-name {
+    font-family: 'Noto Serif Telugu', serif;
+    font-weight: 700;
+    font-size: 2.2em; /* Decreased size */
+    color: #cc3333; /* Kumkum Red */
+    margin: 5px 0;
+}
+
+.prefix, .qualification, .parents {
+    font-size: 0.95em;
+    color: #4a3b32;
+}
+
+.parinayam {
+    font-style: italic;
+    color: #d9a05b;
+    margin: 10px 0; /* Reduced margin */
+    font-size: 1.2em;
+}
+
+.couple-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Reduced gap between bride and groom sections */
+    margin: 10px 0; /* Reduced margin */
+}
+
+.vinnapam-title {
+    color: #cc3333;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    text-decoration-color: #d9a05b;
+}
+.vinnapam-text {
+    color: #4a3b32;
+    line-height: 1.5; /* Reduced line height for text paragraph */
+    padding: 0 20px;
+}
+
+.venue-section h4 {
+    color: #8a252c;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+/* --- TRADITIONAL DECORATIONS (Toranam, Banana Stems & Elephants) --- */
+
+.toranam-garland {
+    position: absolute;
+    top: -16px; /* Sits exactly over the top gold border */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    /* Pure CSS SVG Toranam: Marigold (Banthi) & Mango Leaves (Maamidi aaku) */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80"><path d="M0,10 Q50,25 100,10" fill="none" stroke="%232d1606" stroke-width="2"/><path d="M25,12 C40,25 35,70 25,75 C15,70 10,25 25,12 Z" fill="%232d6a3f"/><path d="M75,12 C90,25 85,70 75,75 C65,70 60,25 75,12 Z" fill="%232d6a3f"/><circle cx="50" cy="18" r="16" fill="%23ea580c"/><circle cx="50" cy="18" r="12" fill="%23f97316"/><circle cx="50" cy="18" r="8" fill="%23fbbf24"/><circle cx="50" cy="18" r="4" fill="%23fef08a"/><circle cx="0" cy="10" r="10" fill="%23ea580c"/><circle cx="0" cy="10" r="7" fill="%23f97316"/><circle cx="100" cy="10" r="10" fill="%23ea580c"/><circle cx="100" cy="10" r="7" fill="%23f97316"/></svg>');
+    background-repeat: repeat-x;
+    background-size: 80px 60px;
+    z-index: 10;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); /* Casts a shadow onto the card */
+}
+
+.banana-tree {
+    position: absolute;
+    top: 20px;
+    width: 130px;
+    height: 380px;
+    /* Pure CSS Stylized Arati Chettu (Banana Stem, Leaves & Fruits) */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 250"><path d="M40 100 C45 150 40 200 35 250 L65 250 C60 200 55 150 60 100 Z" fill="%234ade80"/><path d="M45 100 C50 150 45 200 40 250 L60 250 C55 200 50 150 55 100 Z" fill="%2322c55e"/><path d="M50 100 L50 250" stroke="%23166534" stroke-width="1"/><path d="M50 100 C20 80 0 120 10 160 C30 150 40 120 50 100 Z" fill="%2315803d"/><path d="M50 80 C10 60 -10 100 5 130 C25 120 40 100 50 80 Z" fill="%2316a34a"/><path d="M50 60 C10 40 -10 80 10 100 C30 90 40 80 50 60 Z" fill="%2315803d"/><path d="M50 90 C80 70 100 110 90 150 C70 140 60 110 50 90 Z" fill="%2316a34a"/><path d="M50 70 C90 50 110 90 95 120 C75 110 60 90 50 70 Z" fill="%2315803d"/><path d="M50 50 C90 30 110 70 90 90 C70 80 60 70 50 50 Z" fill="%2316a34a"/><path d="M50 60 C40 10 60 10 50 60 Z" fill="%2322c55e"/><path d="M50 100 C60 130 55 160 50 180" stroke="%23854d0e" stroke-width="3" fill="none"/><circle cx="50" cy="180" r="6" fill="%237f1d1d"/><path d="M52 130 Q60 125 65 135 Q55 140 52 135 Z" fill="%23facc15"/><path d="M53 135 Q65 130 70 140 Q60 145 53 140 Z" fill="%23eab308"/><path d="M48 130 Q40 125 35 135 Q45 140 48 135 Z" fill="%23facc15"/><path d="M47 135 Q35 130 30 140 Q40 145 47 140 Z" fill="%23eab308"/><path d="M52 145 Q60 140 65 150 Q55 155 52 150 Z" fill="%23facc15"/><path d="M48 145 Q40 140 35 150 Q45 155 48 150 Z" fill="%23eab308"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1; /* Puts the stems strictly behind the card */
+    filter: drop-shadow(4px 8px 12px rgba(0,0,0,0.4));
+}
+
+.tree-left {
+    left: -60px;
+}
+.tree-right {
+    right: -60px;
+    transform: scaleX(-1); /* Flips the right stem */
+}
+
+/* Realistic Tracking Elephants */
+.elephant-container {
+    position: sticky;
+    top: 40vh; /* Sticks near the middle of the screen */
+    width: 220px; /* Fixed width */
+    z-index: 10;
+}
+.sticky-left {
+    margin-right: -40px; /* Overlaps elephant trunk onto the card slightly */
+}
+.sticky-right {
+    margin-left: -40px;
+}
+
+.realistic-elephant {
+    width: 100%;
+    height: auto;
+    /* Enhances photorealism and lighting for transparent PNGs */
+    filter: drop-shadow(6px 12px 15px rgba(0,0,0,0.35)) contrast(1.1) brightness(0.95);
+}
+.sticky-right .realistic-elephant {
+    transform: scaleX(-1); /* Flips the image to face the card */
+}
+
+.poola-maala {
+    position: absolute;
+    top: 42%; /* Adjusted to match the trunk correctly */
+    left: 78%;
+    font-size: 2.5rem; /* Switched to rem so it's a stable size */
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4));
+    animation: sway 2.5s ease-in-out infinite alternate;
+    transform-origin: top center;
+}
+.sticky-right .poola-maala {
+    left: auto;
+    right: 78%; /* Mirror position for the flipped elephant */
+}
+@keyframes sway {
+    0% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+/* Shrink decorations on mobile phones so it doesn't look messy */
+@media (max-width: 768px) {
+    .banana-tree { width: 80px; height: 250px; }
+    .tree-left { left: -25px; }
+    .tree-right { right: -25px; }
+    
+    /* Hide tracking elephants on phones so they don't squash the text */
+    .elephant-container { display: none; }
+}
+@media (max-width: 1100px) {
+    .elephant-container { width: 140px; }
+    .poola-maala { font-size: 1.5rem; }
 }
