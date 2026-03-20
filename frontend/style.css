@@ -24,18 +24,33 @@ header.hero {
     position: relative;
 }
 h1 {
-    font-size: 4em;
+    font-family: 'Great Vibes', cursive;
+    font-size: 5.5em; /* Increased size to suit the cursive font */
     margin: 0;
     color: #fcebd5; /* Soft Champagne Gold */
     letter-spacing: 2px;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px; /* Constrains the cascade width */
+}
+.name-left {
+    align-self: flex-start;
+    padding-left: 10%;
 }
 .weds-text {
-    display: block; /* Forces it onto its own line */
-    font-size: 0.5em; /* Decreases the size by half compared to the names */
+    align-self: center;
+    font-family: 'Playfair Display', serif; /* Keeps the "weds" in contrasting serif */
+    font-size: 0.35em; /* Decreases the size */
     font-style: italic; /* Adds a nice elegant slant */
     font-weight: 400; /* Makes it a bit thinner */
-    margin: 10px 0; /* Adds elegant spacing above and below */
+    margin: 5px 0; /* Elegant spacing above and below */
+    letter-spacing: 2px;
+}
+.name-right {
+    align-self: flex-end;
+    padding-right: 10%;
 }
 .subtitle {
     font-size: 1.4em;
@@ -74,7 +89,8 @@ h1 {
     margin: 0 auto;
 }
 .united-text {
-    font-size: 2.8em;
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5em;
     color: #8a252c; /* Soft Burgundy */
     margin-bottom: 15px;
     letter-spacing: 1px;
