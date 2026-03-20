@@ -34,8 +34,8 @@
     <!-- Navigation Tabs -->
     <div class="tabs">
         <button class="tab-button active" onclick="openTab(event, 'Invitation')">Invitation</button>
-        <button class="tab-button" onclick="openTab(event, 'Wedding')">Wedding</button>
-        <button class="tab-button" onclick="openTab(event, 'Reception')">Reception</button>
+        <button class="tab-button" onclick="openTab(event, 'Wedding')">Wedding Venue</button>
+        <button class="tab-button" onclick="openTab(event, 'Reception')">Reception Venue</button>
     </div>
 
     <!-- 1. Invitation Tab -->
@@ -202,22 +202,34 @@
     <!-- 2. Wedding Tab -->
     <div id="Wedding" class="tab-content">
         <div class="details-card">
-            <h2>Wedding Ceremony</h2>
-            <p><strong>Date:</strong> Friday, October 24th, 2026</p>
-            <p><strong>Time:</strong> 10:00 AM Onwards</p>
-            <p><strong>Venue:</strong> The Grand Palace Gardens</p>
-            <p><strong>Address:</strong> 123 Wedding Boulevard, Celebration City</p>
+            <h2>Wedding Venue</h2>
+            <p><strong>Date:</strong> Friday, 10th April 2026</p>
+            <p><strong>Time:</strong> 9:09 PM Onwards</p>
+            <p><strong>Venue:</strong> V Square Kalyana Mandapam</p>
+            <p><strong>Address:</strong> Malkapuram, Thullur Mandal, Guntur District</p>
+            
+            <!-- Embedded Map & Directions -->
+            <div class="map-container">
+                <iframe src="https://maps.google.com/maps?q=V%20Square%20Kalyana%20Mandapam,%20Malkapuram&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+            </div>
+            <a href="https://share.google/K741mGAqrmedxRDQ8" target="_blank" class="directions-btn">📍 Get Directions</a>
         </div>
     </div>
 
     <!-- 3. Reception Tab -->
     <div id="Reception" class="tab-content">
         <div class="details-card">
-            <h2>Wedding Reception</h2>
-            <p><strong>Date:</strong> Saturday, October 25th, 2026</p>
-            <p><strong>Time:</strong> 7:00 PM to Midnight</p>
-            <p><strong>Venue:</strong> Royal Banquet Hall</p>
-            <p><strong>Address:</strong> 456 Evening Avenue, Celebration City</p>
+            <h2>Reception Venue</h2>
+            <p><strong>Date:</strong> Sunday, 12th April 2026</p>
+            <p><strong>Time:</strong> 11:00 AM</p>
+            <p><strong>Venue:</strong> KN Convention</p>
+            <p><strong>Address:</strong> beside ayyappa swami temple, ayyappa nagar 3rd line, RTC colony Extn., kakani road, Guntur</p>
+
+            <!-- Embedded Map & Directions -->
+            <div class="map-container">
+                <iframe src="https://maps.google.com/maps?q=KN%20Convention,%20Guntur&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+            </div>
+            <a href="https://share.google/2rcWQH2zFfjdvrUL9" target="_blank" class="directions-btn">📍 Get Directions</a>
         </div>
     </div>
 

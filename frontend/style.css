@@ -153,13 +153,16 @@ h1 {
 
 /* Details Card */
 .details-card {
-    background: rgba(255, 255, 255, 0.92); /* Slightly transparent */
+    /* Premium warm ivory gradient with arabesque texture */
+    background: linear-gradient(135deg, rgba(253, 251, 247, 0.96) 0%, rgba(243, 232, 216, 0.96) 100%), url('arabesque.png');
     max-width: 600px;
     margin: 0 auto;
     padding: 40px;
     border-radius: 12px;
-    border: 1px solid #d9a05b; /* Elegant Gold border */
-    box-shadow: 0 8px 24px rgba(138, 37, 44, 0.15);
+    border: 2px solid #8a252c; /* Kumkum border to match the theme */
+    outline: 2px solid #d9a05b; /* Inner gold border */
+    outline-offset: -8px;
+    box-shadow: 0 12px 30px rgba(138, 37, 44, 0.2), inset 0 0 20px rgba(217, 160, 91, 0.15);
     line-height: 1.8;
 }
 h2 {
@@ -502,3 +505,36 @@ h2 {
 }
 .scroll-roller::before { left: -9px; }
 .scroll-roller::after { right: -9px; }
+
+/* --- VENUE MAPS & BUTTONS --- */
+
+.map-container {
+    margin: 25px 0 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #d9a05b;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    height: 250px;
+}
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.directions-btn {
+    display: inline-block;
+    background-color: #8a252c;
+    color: #fcebd5;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(138, 37, 44, 0.3);
+}
+.directions-btn:hover {
+    background-color: #6b1d22;
+    transform: translateY(-2px);
+}
