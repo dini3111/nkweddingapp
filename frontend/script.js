@@ -15,3 +15,21 @@ function openTab(evt, tabName) {
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.classList.add("active");
 }
+
+// Switch between Telugu and English Patrika
+function switchLanguage(lang) {
+    document.getElementById('lang-te').style.display = lang === 'te' ? 'block' : 'none';
+    document.getElementById('lang-en').style.display = lang === 'en' ? 'block' : 'none';
+
+    const langBtns = document.getElementsByClassName("lang-btn");
+    langBtns[0].classList.toggle("active", lang === 'te');
+    langBtns[1].classList.toggle("active", lang === 'en');
+
+    // Toggle royal scroll card theme for English
+    const patrikaCard = document.querySelector('.patrika-card');
+    if (lang === 'en') {
+        patrikaCard.classList.add('scroll-theme');
+    } else {
+        patrikaCard.classList.remove('scroll-theme');
+    }
+}

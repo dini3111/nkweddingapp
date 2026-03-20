@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     /* Soft, elegant pastel gradient overlay for a premium invitation look */
-    background: linear-gradient(rgba(255, 246, 233, 0.92), rgba(255, 235, 238, 0.92)), url('https://images.unsplash.com/photo-1522383225653-ed111181a951?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+    background: linear-gradient(rgba(255, 246, 233, 0.92), rgba(255, 235, 238, 0.92)), url('floral-bg.jpg') no-repeat center center fixed;
     background-size: cover;
     color: #333;
     text-align: center;
@@ -209,7 +209,7 @@ h2 {
     /* Soft golden yellow + mandala texture */
     background: 
         linear-gradient(rgba(255, 248, 231, 0.94), rgba(255, 242, 217, 0.94)),
-        url('https://www.transparenttextures.com/patterns/arabesque.png');
+        url('arabesque.png');
     background-size: cover, auto;
     font-family: 'Noto Serif Telugu', serif;
     font-weight: bold; /* Makes all text in the invitation bold and highly legible */
@@ -248,8 +248,8 @@ h2 {
     margin-bottom: 15px; /* Reduced margin */
 }
 .srirastu {
-    font-weight: bold;
-    font-size: 1.1em;
+    font-weight: 900; /* Makes the text extra bold */
+    font-size: 1.5em; /* Increases the text size */
     letter-spacing: 1px;
     margin: 0;
 }
@@ -434,3 +434,71 @@ h2 {
     .elephant-container { width: 140px; }
     .poola-maala { font-size: 1.5rem; }
 }
+
+/* --- ENGLISH INVITATION SPECIFICS --- */
+
+.english-name {
+    font-family: 'Great Vibes', cursive;
+    font-weight: normal;
+    font-size: 3.2em;
+    color: #cc3333;
+    margin: 5px 0;
+}
+
+.compliments-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #8a252c;
+    border-top: 1px dashed #d9a05b;
+    padding-top: 20px;
+}
+.comp-left { text-align: left; }
+.comp-right { text-align: right; }
+@media (max-width: 768px) {
+    .compliments-section { flex-direction: column; gap: 15px; text-align: center; }
+    .comp-left, .comp-right { text-align: center; }
+}
+
+/* --- ENGLISH SCROLL CARD THEME --- */
+
+.patrika-card.scroll-theme {
+    /* Royal scroll parchment background simulating 3D curved paper */
+    background: linear-gradient(to right, #e3cdad 0%, #fff7e6 12%, #fff7e6 88%, #e3cdad 100%);
+    border: none;
+    outline: none;
+    border-radius: 0;
+    box-shadow: 0 25px 40px rgba(0,0,0,0.3);
+}
+.patrika-card.scroll-theme::before {
+    display: none; /* Hides the Gopuram watermark for the clean scroll look */
+}
+
+/* Wooden Rollers */
+.scroll-roller {
+    position: absolute;
+    left: -25px;
+    right: -25px;
+    height: 30px;
+    background: linear-gradient(to bottom, #5c3a21 0%, #8b5a2b 30%, #a0522d 50%, #3e200c 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.5), inset 0 3px 5px rgba(255,255,255,0.2);
+    z-index: 5; /* Keeps it under the Toranam garland */
+}
+.top-roller { top: -15px; }
+.bottom-roller { bottom: -15px; }
+
+/* Golden Knobs on Rollers */
+.scroll-roller::before, .scroll-roller::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 40px;
+    background: linear-gradient(to right, #d4af37 0%, #fff68f 50%, #d4af37 100%);
+    top: -5px;
+    border-radius: 9px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4), inset 0 0 4px rgba(0,0,0,0.2);
+}
+.scroll-roller::before { left: -9px; }
+.scroll-roller::after { right: -9px; }
