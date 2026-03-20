@@ -30,6 +30,13 @@ h1 {
     letter-spacing: 2px;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
 }
+.weds-text {
+    display: block; /* Forces it onto its own line */
+    font-size: 0.5em; /* Decreases the size by half compared to the names */
+    font-style: italic; /* Adds a nice elegant slant */
+    font-weight: 400; /* Makes it a bit thinner */
+    margin: 10px 0; /* Adds elegant spacing above and below */
+}
 .subtitle {
     font-size: 1.4em;
     color: #e8c69c;
