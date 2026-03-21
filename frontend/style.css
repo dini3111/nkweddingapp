@@ -198,6 +198,11 @@ h2 {
     color: #fcebd5;
 }
 
+/* Smooth fade animation for language switching */
+#lang-te, #lang-en {
+    animation: fadeEffect 0.6s ease-out;
+}
+
 /* Wrapper to keep elephants with Patrika */
 .patrika-wrapper {
     display: flex;
@@ -339,10 +344,24 @@ h2 {
     padding: 0 20px;
 }
 
-.venue-section h4 {
+.venue-section h4, .reception-section h4 {
     color: #8a252c;
     font-size: 1.2em;
     margin-bottom: 5px;
+}
+
+.inviters-section {
+    text-align: right;
+    margin-top: 35px;
+    color: #8a252c;
+}
+.inviters-label {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+.inviters-names {
+    font-size: 1.2em;
+    font-weight: bold;
 }
 
 /* --- TRADITIONAL DECORATIONS (Toranam, Banana Stems & Elephants) --- */
@@ -442,7 +461,7 @@ h2 {
 
 .english-name {
     font-family: 'Great Vibes', cursive;
-    font-weight: normal;
+    font-weight: bold;
     font-size: 3.2em;
     color: #cc3333;
     margin: 5px 0;
