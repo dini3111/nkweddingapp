@@ -83,6 +83,71 @@ h1 {
     60% { transform: translateY(-5px); }
 }
 
+/* Traditional Musicians in Hero Section */
+.musician {
+    position: absolute;
+    bottom: -4px; /* Stand exactly on the gold border */
+    width: 200px; /* Grand and clearly visible */
+    height: auto;
+    /* Advanced photorealistic lighting to match other elements */
+    filter: drop-shadow(6px 10px 15px rgba(0,0,0,0.4)) contrast(1.1);
+    z-index: 5;
+}
+.musician-left {
+    left: 2%;
+    transform: scaleX(-1); /* Flips the left image to face the center */
+}
+.musician-right {
+    right: 2%;
+}
+@media (max-width: 900px) {
+    .musician { width: 120px; bottom: 0; }
+}
+
+/* --- Music Notes Animation --- */
+.music-notes {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+}
+.left-notes {
+    /* Positions the notes right at the tip of the flipped Sannai horn */
+    bottom: 250px; /* Moved higher up to match the tall Sannai horn */
+    left: calc(2% + 170px); /* Shifted right to match the backward curve */
+}
+.right-notes {
+    /* Positions the notes right at the tip of the un-flipped Sannai horn */
+    bottom: 250px; 
+    right: calc(2% + 170px);
+}
+.right-notes .note-1 { left: auto; right: 0px; }
+.right-notes .note-2 { left: auto; right: 25px; }
+.right-notes .note-3 { left: auto; right: 50px; }
+.note {
+    position: absolute;
+    font-size: 2em;
+    color: #fcebd5; /* Matches the Champagne Gold theme */
+    opacity: 0;
+    animation: floatUp 3s infinite ease-in-out;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+.note-1 { animation-delay: 0s; left: 0px; }
+.note-2 { animation-delay: 1s; left: 25px; font-size: 1.5em; }
+.note-3 { animation-delay: 2s; left: 50px; font-size: 2.2em; }
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 0; }
+    20% { opacity: 1; }
+    50% { transform: translateY(-40px) scale(1.1) rotate(15deg); }
+    80% { opacity: 0.8; }
+    100% { transform: translateY(-80px) scale(1.2) rotate(-15deg); opacity: 0; }
+}
+@media (max-width: 900px) {
+    .left-notes { bottom: 150px; left: calc(2% + 95px); } /* Adjusted for mobile scale */
+    .right-notes { bottom: 150px; right: calc(2% + 95px); }
+    .note { font-size: 1.5em; }
+}
+
 /* United Section & Quotes */
 .united-section {
     padding: 60px 20px 40px;
