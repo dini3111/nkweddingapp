@@ -1,0 +1,779 @@
+/* Base Styles */
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    /* Soft, elegant pastel gradient overlay for a premium invitation look */
+    background: linear-gradient(rgba(255, 246, 233, 0.92), rgba(255, 235, 238, 0.92)), url('floral-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+    text-align: center;
+    overflow-x: hidden; /* Prevents scrollbars from the decorative leaves */
+}
+
+/* Play Music Button */
+.play-music-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9999;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #8a252c, #6b1d22);
+    color: white;
+    border: 2px solid #d9a05b;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4), 0 0 20px rgba(217, 160, 91, 0.5);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    opacity: 1;
+    visibility: visible;
+}
+
+.play-music-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.play-music-btn:active {
+    transform: scale(0.95);
+}
+
+/* Falling Petals Animation - Low Visibility */
+.falling-flowers-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 30;
+    overflow: hidden;
+}
+
+.flower {
+    position: fixed;
+    font-size: 2.5em;
+    opacity: 0.65;
+    user-select: none;
+    animation: fall linear forwards;
+    will-change: transform, opacity;
+    filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 6px rgba(200, 100, 100, 0.4));
+}
+
+.flower.float-left {
+    animation: fallAndDrift linear forwards;
+}
+
+.flower.float-right {
+    animation: fallAndDriftRight linear forwards;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0.65;
+    }
+    to {
+        transform: translateY(calc(100vh + 100px)) rotate(1080deg);
+        opacity: 0.3;
+    }
+}
+
+@keyframes fallAndDrift {
+    from {
+        transform: translateY(-100px) translateX(0) rotate(0deg);
+        opacity: 0.65;
+    }
+    to {
+        transform: translateY(calc(100vh + 100px)) translateX(-80px) rotate(1080deg);
+        opacity: 0.3;
+    }
+}
+
+@keyframes fallAndDriftRight {
+    from {
+        transform: translateY(-100px) translateX(0) rotate(0deg);
+        opacity: 0.65;
+    }
+    to {
+        transform: translateY(calc(100vh + 100px)) translateX(80px) rotate(1080deg);
+        opacity: 0.3;
+    }
+}
+
+/* Header / Hero Section */
+header.hero {
+    /* Soft Burgundy gradient for a premium Kumkum feel */
+    background: linear-gradient(135deg, #8a252c, #6b1d22);
+    border-bottom: 4px solid #d9a05b; /* Elegant Gold/Pasupu */
+    min-height: 85vh; /* Makes the header take up most of the screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 5.5em; /* Increased size to suit the cursive font */
+    margin: 0;
+    color: #fcebd5; /* Soft Champagne Gold */
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 700px; /* Constrains the cascade width */
+}
+.name-left {
+    align-self: flex-start;
+    padding-left: 10%;
+}
+.weds-text {
+    align-self: center;
+    font-family: 'Playfair Display', serif; /* Keeps the "weds" in contrasting serif */
+    font-size: 0.35em; /* Decreases the size */
+    font-style: italic; /* Adds a nice elegant slant */
+    font-weight: 400; /* Makes it a bit thinner */
+    margin: 5px 0; /* Elegant spacing above and below */
+    letter-spacing: 2px;
+    color: #fcebd5;
+    animation: none;
+}
+.name-right {
+    align-self: flex-end;
+    padding-right: 10%;
+}
+
+/* Scroll Mode - Single Line with Heart */
+h1.scroll-mode {
+    flex-direction: row;
+    max-width: 900px;
+    justify-content: center;
+    gap: 20px;
+}
+
+h1.scroll-mode .name-left {
+    align-self: center;
+    padding-left: 0;
+}
+
+h1.scroll-mode .weds-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2em;
+    color: #ff69b4;
+    margin: 0;
+    letter-spacing: 0;
+    animation: heartbeat 1.5s infinite;
+}
+
+h1.scroll-mode .name-right {
+    align-self: center;
+    padding-right: 0;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.subtitle {
+    font-size: 1.4em;
+    color: #e8c69c;
+    margin-top: 10px;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* Scroll Prompt */
+.scroll-prompt {
+    position: absolute;
+    bottom: 40px;
+    color: #fcebd5;
+    animation: bounce 2s infinite;
+    opacity: 0.8;
+}
+.scroll-prompt p {
+    margin: 0 0 5px 0;
+    font-size: 1em;
+    font-style: italic;
+}
+.scroll-prompt .arrow {
+    font-size: 1.5em;
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+/* Traditional Musicians in Hero Section */
+.musician {
+    position: absolute;
+    bottom: -4px; /* Stand exactly on the gold border */
+    width: 200px; /* Grand and clearly visible */
+    height: auto;
+    /* Advanced photorealistic lighting to match other elements */
+    filter: drop-shadow(6px 10px 15px rgba(0,0,0,0.4)) contrast(1.1);
+    z-index: 5;
+}
+.musician-left {
+    left: 2%;
+    transform: scaleX(-1); /* Flips the left image to face the center */
+}
+.musician-right {
+    right: 2%;
+}
+@media (max-width: 900px) {
+    .musician { width: 120px; bottom: 0; }
+}
+
+/* --- Music Notes Animation --- */
+.music-notes {
+    position: absolute;
+    z-index: 10;
+    pointer-events: none;
+}
+.left-notes {
+    /* Positions the notes right at the tip of the flipped Sannai horn */
+    bottom: 250px; /* Moved higher up to match the tall Sannai horn */
+    left: calc(2% + 170px); /* Shifted right to match the backward curve */
+}
+.right-notes {
+    /* Positions the notes right at the tip of the un-flipped Sannai horn */
+    bottom: 250px; 
+    right: calc(2% + 170px);
+}
+.right-notes .note-1 { left: auto; right: 0px; }
+.right-notes .note-2 { left: auto; right: 25px; }
+.right-notes .note-3 { left: auto; right: 50px; }
+.note {
+    position: absolute;
+    font-size: 2em;
+    color: #fcebd5; /* Matches the Champagne Gold theme */
+    opacity: 0;
+    animation: floatUp 3s infinite ease-in-out;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+.note-1 { animation-delay: 0s; left: 0px; }
+.note-2 { animation-delay: 1s; left: 25px; font-size: 1.5em; }
+.note-3 { animation-delay: 2s; left: 50px; font-size: 2.2em; }
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 0; }
+    20% { opacity: 1; }
+    50% { transform: translateY(-40px) scale(1.1) rotate(15deg); }
+    80% { opacity: 0.8; }
+    100% { transform: translateY(-80px) scale(1.2) rotate(-15deg); opacity: 0; }
+}
+@media (max-width: 900px) {
+    .left-notes { bottom: 150px; left: calc(2% + 95px); } /* Adjusted for mobile scale */
+    .right-notes { bottom: 150px; right: calc(2% + 95px); }
+    .note { font-size: 1.5em; }
+}
+
+/* United Section & Quotes */
+.united-section {
+    padding: 60px 20px 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.united-text {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3.5em;
+    color: #8a252c; /* Soft Burgundy */
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+.wedding-quote {
+    font-size: 1.3em;
+    color: #5a4b42;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Tab Navigation Styles */
+.tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #fdf8f5; /* Warm Ivory */
+    border-bottom: 3px solid #8a252c; /* Soft Burgundy */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.tab-button {
+    flex: 1; /* Makes tabs sit evenly side-by-side */
+    max-width: 300px;
+    background-color: inherit;
+    border: none;
+    border-right: 1px solid #e8c69c;
+    outline: none;
+    cursor: pointer;
+    padding: 16px 32px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1.2em;
+    font-family: 'Playfair Display', serif;
+    color: #8a252c;
+    font-weight: bold;
+}
+.tab-button:last-child {
+    border-right: none;
+}
+.tab-button:hover:not(.active) {
+    background-color: #faeedf; /* Soft Champagne hover */
+}
+.tab-button.active {
+    background-color: #8a252c; /* Soft Burgundy */
+    color: #fcebd5;
+}
+
+/* Tab Content Styles */
+.tab-content {
+    display: none; /* Hidden by default */
+    padding: 50px 20px;
+    animation: fadeEffect 0.8s; /* Smooth fade in */
+}
+@keyframes fadeEffect {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Details Card */
+.details-card {
+    /* Premium warm ivory gradient with arabesque texture */
+    background: linear-gradient(135deg, rgba(253, 251, 247, 0.96) 0%, rgba(243, 232, 216, 0.96) 100%), url('arabesque.png');
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 12px;
+    border: 2px solid #8a252c; /* Kumkum border to match the theme */
+    outline: 2px solid #d9a05b; /* Inner gold border */
+    outline-offset: -8px;
+    box-shadow: 0 12px 30px rgba(138, 37, 44, 0.2), inset 0 0 20px rgba(217, 160, 91, 0.15);
+    line-height: 1.8;
+}
+h2 {
+    color: #8a252c;
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #d9a05b;
+    padding-bottom: 10px;
+}
+
+/* --- TRADITIONAL INVITATION STYLES --- */
+
+/* Language Switcher inside Invitation Tab */
+.lang-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.lang-btn {
+    background: transparent;
+    border: 1px solid #d9a05b;
+    color: #8a252c;
+    padding: 8px 24px;
+    border-radius: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.lang-btn.active, .lang-btn:hover {
+    background: #8a252c;
+    color: #fcebd5;
+}
+
+/* Smooth fade animation for language switching */
+#lang-te, #lang-en {
+    animation: fadeEffect 0.6s ease-out;
+}
+
+/* Wrapper to keep elephants with Patrika */
+.patrika-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+    gap: 10px;
+}
+
+/* Traditional Patrika Card */
+.patrika-card {
+    /* Soft golden yellow + mandala texture */
+    background: 
+        linear-gradient(rgba(255, 248, 231, 0.94), rgba(255, 242, 217, 0.94)),
+        url('arabesque.png');
+    background-size: cover, auto;
+    font-family: 'Noto Serif Telugu', serif;
+    font-weight: bold; /* Makes all text in the invitation bold and highly legible */
+    border-radius: 4px;
+    border: 2px solid #8a252c; /* Outer Kumkum border */
+    outline: 4px double #d9a05b; /* Inner traditional golden double border */
+    outline-offset: -16px; /* Pushes the outline inside the card */
+    padding: 60px 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15), inset 0 0 50px rgba(217, 160, 91, 0.2); /* Creates a thick paper effect */
+    max-width: 600px;
+    position: relative;
+    z-index: 1; /* Creates a stacking context for the decorations */
+}
+
+/* Distinct Tirupati Gopuram Watermark */
+.patrika-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* Real Photorealistic Gopuram Watermark */
+    background: url('sri-ranganatha-swamy-temple-srirangam-600nw-2559794751.jpg') center center no-repeat;
+    background-size: cover;
+    opacity: 0.08; /* Reduced opacity for a softer, cleaner watermark */
+    mix-blend-mode: multiply; /* Blends the image naturally into the golden card */
+    z-index: -1; /* Puts the Gopuram exactly behind the text */
+    pointer-events: none;
+    border-radius: 4px; /* Matches the card borders */
+}
+
+.auspicious-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Reduced gap */
+    color: #cc3333; /* Vermilion / Kumkum */
+    margin-bottom: 15px; /* Reduced margin */
+}
+.srirastu {
+    font-weight: 900; /* Makes the text extra bold */
+    font-size: 1.5em; /* Increases the text size */
+    letter-spacing: 1px;
+    margin: 0;
+}
+.ganesha-icon {
+    width: 110px; /* Increased size to show the beautiful details */
+    height: auto;
+    /* Advanced photorealistic lighting and shadow to match the elephants */
+    filter: drop-shadow(4px 8px 10px rgba(0,0,0,0.35)) contrast(1.1) brightness(1.05);
+    margin-top: 5px;
+}
+
+.patrika-title {
+    color: #8a252c;
+    font-size: 1.8em;
+    margin: 10px 0; /* Tightened spacing */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.floral-divider {
+    color: #d9a05b;
+    font-size: 1.5em;
+    margin: 10px 0; /* Tightened spacing */
+    letter-spacing: 10px;
+}
+
+.muhurtham-section {
+    margin: 15px 0; /* Reduced margin */
+    line-height: 1.5; /* Reduced line-height for tighter sentences */
+}
+.muhurtham-date {
+    color: #8a252c;
+    font-weight: bold;
+    font-size: 1.2em;
+    background: rgba(217, 160, 91, 0.15);
+    padding: 8px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.ekaika-putrika {
+    font-style: italic;
+    color: #5a4b42;
+    margin-top: 15px; /* Reduced margin */
+}
+
+.traditional-name {
+    font-family: 'Noto Serif Telugu', serif;
+    font-weight: 700;
+    font-size: 2.2em; /* Decreased size */
+    color: #cc3333; /* Kumkum Red */
+    margin: 5px 0;
+}
+
+.prefix, .qualification, .parents {
+    font-size: 0.95em;
+    color: #4a3b32;
+}
+
+.parinayam {
+    font-style: italic;
+    color: #d9a05b;
+    margin: 10px 0; /* Reduced margin */
+    font-size: 1.2em;
+}
+
+.couple-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Reduced gap between bride and groom sections */
+    margin: 10px 0; /* Reduced margin */
+}
+
+.vinnapam-title {
+    color: #cc3333;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    text-decoration: underline;
+    text-decoration-color: #d9a05b;
+}
+.vinnapam-text {
+    color: #4a3b32;
+    line-height: 1.5; /* Reduced line height for text paragraph */
+    padding: 0 20px;
+}
+
+.venue-section h4, .reception-section h4 {
+    color: #8a252c;
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.inviters-section {
+    text-align: right;
+    margin-top: 35px;
+    color: #8a252c;
+}
+.inviters-label {
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+.inviters-names {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* --- TRADITIONAL DECORATIONS (Toranam, Banana Stems & Elephants) --- */
+
+.toranam-garland {
+    position: absolute;
+    top: -16px; /* Sits exactly over the top gold border */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    /* Pure CSS SVG Toranam: Marigold (Banthi) & Mango Leaves (Maamidi aaku) */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80"><path d="M0,10 Q50,25 100,10" fill="none" stroke="%232d1606" stroke-width="2"/><path d="M25,12 C40,25 35,70 25,75 C15,70 10,25 25,12 Z" fill="%232d6a3f"/><path d="M75,12 C90,25 85,70 75,75 C65,70 60,25 75,12 Z" fill="%232d6a3f"/><circle cx="50" cy="18" r="16" fill="%23ea580c"/><circle cx="50" cy="18" r="12" fill="%23f97316"/><circle cx="50" cy="18" r="8" fill="%23fbbf24"/><circle cx="50" cy="18" r="4" fill="%23fef08a"/><circle cx="0" cy="10" r="10" fill="%23ea580c"/><circle cx="0" cy="10" r="7" fill="%23f97316"/><circle cx="100" cy="10" r="10" fill="%23ea580c"/><circle cx="100" cy="10" r="7" fill="%23f97316"/></svg>');
+    background-repeat: repeat-x;
+    background-size: 80px 60px;
+    z-index: 10;
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); /* Casts a shadow onto the card */
+}
+
+.banana-tree {
+    position: absolute;
+    top: 20px;
+    width: 130px;
+    height: 380px;
+    /* Pure CSS Stylized Arati Chettu (Banana Stem, Leaves & Fruits) */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 250"><path d="M40 100 C45 150 40 200 35 250 L65 250 C60 200 55 150 60 100 Z" fill="%234ade80"/><path d="M45 100 C50 150 45 200 40 250 L60 250 C55 200 50 150 55 100 Z" fill="%2322c55e"/><path d="M50 100 L50 250" stroke="%23166534" stroke-width="1"/><path d="M50 100 C20 80 0 120 10 160 C30 150 40 120 50 100 Z" fill="%2315803d"/><path d="M50 80 C10 60 -10 100 5 130 C25 120 40 100 50 80 Z" fill="%2316a34a"/><path d="M50 60 C10 40 -10 80 10 100 C30 90 40 80 50 60 Z" fill="%2315803d"/><path d="M50 90 C80 70 100 110 90 150 C70 140 60 110 50 90 Z" fill="%2316a34a"/><path d="M50 70 C90 50 110 90 95 120 C75 110 60 90 50 70 Z" fill="%2315803d"/><path d="M50 50 C90 30 110 70 90 90 C70 80 60 70 50 50 Z" fill="%2316a34a"/><path d="M50 60 C40 10 60 10 50 60 Z" fill="%2322c55e"/><path d="M50 100 C60 130 55 160 50 180" stroke="%23854d0e" stroke-width="3" fill="none"/><circle cx="50" cy="180" r="6" fill="%237f1d1d"/><path d="M52 130 Q60 125 65 135 Q55 140 52 135 Z" fill="%23facc15"/><path d="M53 135 Q65 130 70 140 Q60 145 53 140 Z" fill="%23eab308"/><path d="M48 130 Q40 125 35 135 Q45 140 48 135 Z" fill="%23facc15"/><path d="M47 135 Q35 130 30 140 Q40 145 47 140 Z" fill="%23eab308"/><path d="M52 145 Q60 140 65 150 Q55 155 52 150 Z" fill="%23facc15"/><path d="M48 145 Q40 140 35 150 Q45 155 48 150 Z" fill="%23eab308"/></svg>');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1; /* Puts the stems strictly behind the card */
+    filter: drop-shadow(4px 8px 12px rgba(0,0,0,0.4));
+}
+
+.tree-left {
+    left: -60px;
+}
+.tree-right {
+    right: -60px;
+    transform: scaleX(-1); /* Flips the right stem */
+}
+
+/* Realistic Tracking Elephants */
+.elephant-container {
+    position: sticky;
+    top: 40vh; /* Sticks near the middle of the screen */
+    width: 220px; /* Fixed width */
+    z-index: 10;
+}
+.sticky-left {
+    margin-right: -40px; /* Overlaps elephant trunk onto the card slightly */
+}
+.sticky-right {
+    margin-left: -40px;
+}
+
+.realistic-elephant {
+    width: 100%;
+    height: auto;
+    /* Enhances photorealism and lighting for transparent PNGs */
+    filter: drop-shadow(6px 12px 15px rgba(0,0,0,0.35)) contrast(1.1) brightness(0.95);
+}
+.sticky-right .realistic-elephant {
+    transform: scaleX(-1); /* Flips the image to face the card */
+}
+
+.poola-maala {
+    position: absolute;
+    top: 15%; /* Moved much higher to match the raised trunk */
+    left: 81%; /* Shifted right to hang perfectly from the tip */
+    font-size: 2.5rem; /* Switched to rem so it's a stable size */
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.4));
+    animation: sway 2.5s ease-in-out infinite alternate;
+    transform-origin: top center;
+}
+.sticky-right .poola-maala {
+    left: auto;
+    right: 81%; /* Mirror position for the flipped elephant */
+}
+@keyframes sway {
+    0% { transform: rotate(5deg); }
+    100% { transform: rotate(-5deg); }
+}
+
+/* Shrink decorations on mobile phones so it doesn't look messy */
+@media (max-width: 768px) {
+    .banana-tree { width: 80px; height: 250px; }
+    .tree-left { left: -25px; }
+    .tree-right { right: -25px; }
+    
+    /* Hide tracking elephants on phones so they don't squash the text */
+    .elephant-container { display: none; }
+}
+@media (max-width: 1100px) {
+    .elephant-container { width: 140px; }
+    .poola-maala { font-size: 1.5rem; }
+}
+
+/* --- ENGLISH INVITATION SPECIFICS --- */
+
+.english-name {
+    font-family: 'Great Vibes', cursive;
+    font-weight: bold;
+    font-size: 3.2em;
+    color: #cc3333;
+    margin: 5px 0;
+}
+
+.compliments-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #8a252c;
+    border-top: 1px dashed #d9a05b;
+    padding-top: 20px;
+}
+.comp-left { text-align: left; }
+.comp-right { text-align: right; }
+@media (max-width: 768px) {
+    .compliments-section { flex-direction: column; gap: 15px; text-align: center; }
+    .comp-left, .comp-right { text-align: center; }
+}
+
+/* --- ENGLISH SCROLL CARD THEME --- */
+
+.patrika-card.scroll-theme {
+    /* Royal scroll parchment background simulating 3D curved paper */
+    background: linear-gradient(to right, #e3cdad 0%, #fff7e6 12%, #fff7e6 88%, #e3cdad 100%);
+    border: none;
+    outline: none;
+    border-radius: 0;
+    box-shadow: 0 25px 40px rgba(0,0,0,0.3);
+}
+.patrika-card.scroll-theme::before {
+    display: none; /* Hides the Gopuram watermark for the clean scroll look */
+}
+
+/* Wooden Rollers */
+.scroll-roller {
+    position: absolute;
+    left: -25px;
+    right: -25px;
+    height: 30px;
+    background: linear-gradient(to bottom, #5c3a21 0%, #8b5a2b 30%, #a0522d 50%, #3e200c 100%);
+    border-radius: 15px;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.5), inset 0 3px 5px rgba(255,255,255,0.2);
+    z-index: 5; /* Keeps it under the Toranam garland */
+}
+.top-roller { top: -15px; }
+.bottom-roller { bottom: -15px; }
+
+/* Golden Knobs on Rollers */
+.scroll-roller::before, .scroll-roller::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 40px;
+    background: linear-gradient(to right, #d4af37 0%, #fff68f 50%, #d4af37 100%);
+    top: -5px;
+    border-radius: 9px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4), inset 0 0 4px rgba(0,0,0,0.2);
+}
+.scroll-roller::before { left: -9px; }
+.scroll-roller::after { right: -9px; }
+
+/* --- VENUE MAPS & BUTTONS --- */
+
+.map-container {
+    margin: 25px 0 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #d9a05b;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    height: 250px;
+}
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.directions-btn {
+    display: inline-block;
+    background-color: #8a252c;
+    color: #fcebd5;
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(138, 37, 44, 0.3);
+}
+.directions-btn:hover {
+    background-color: #6b1d22;
+    transform: translateY(-2px);
+}
+
+/* --- FOOTER STYLES --- */
+.site-footer {
+    background-color: rgba(253, 248, 245, 0.9); /* Warm Ivory, slightly transparent */
+    border-top: 2px dashed #d9a05b; /* Elegant gold dashed border */
+    padding: 25px 20px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9em;
+    color: #5a4b42;
+    margin-top: 40px;
+}
+.site-footer p {
+    margin: 6px 0;
+}
+.site-footer strong {
+    color: #8a252c;
+}
+.contact-info a {
+    color: #8a252c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.contact-info a:hover {
+    color: #d9a05b;
+    text-decoration: underline;
+}

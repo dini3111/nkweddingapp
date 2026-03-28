@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navya weds Karun Kumar</title>
+    <!-- Importing an elegant font for the wedding theme -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+Telugu:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Linking the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Falling Petals Container -->
+    <div class="falling-flowers-container" id="flowersContainer"></div>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="wedding-music.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Play Music Button (always visible as fallback) -->
+    <button id="playMusicBtn" class="play-music-btn" title="Click to play music">🔊 Play Music</button>
+
+    <!-- Main Header / Invitation Landing -->
+    <header class="hero">
+        <!-- Traditional Musicians -->
+        <img src="sannai.png" class="musician musician-left" alt="Sannai Player">
+        
+        <!-- Music Notes Animation for Sannai -->
+        <div class="music-notes left-notes">
+            <span class="note note-1">🎵</span>
+            <span class="note note-2">🎶</span>
+            <span class="note note-3">🎵</span>
+        </div>
+
+        <img src="sannai.png" class="musician musician-right" alt="Sannai Player">
+
+        <!-- Music Notes Animation for Right Musician -->
+        <div class="music-notes right-notes">
+            <span class="note note-1">🎵</span>
+            <span class="note note-2">🎶</span>
+            <span class="note note-3">🎵</span>
+        </div>
+
+        <h1>
+            <span class="name-left">Navya</span>
+            <span class="weds-text">weds</span>
+            <span class="name-right">Karun Kumar</span>
+        </h1>
+        <p class="subtitle">We joyfully invite you to our wedding celebration</p>
+        <!-- <p class="subtitle">✨ “In this auspicious moment, two hearts unite in sweetness, blossoming into the sacred bond of marriage under the witness of Vedic chants. Surrounded by the blessings of elders, we invite you and your family to join us at the joyous wedding and shower the newlyweds with your love and blessings.”</p> -->
+        <div class="scroll-prompt">
+            <p>Scroll down</p>
+            <div class="arrow">↓</div>
+        </div>
+    </header>
+
+    <!-- Beautiful Lines & United Section -->
+    <section class="united-section">
+        <h2 class="united-text">Navya & Karun Kumar gets united</h2>
+        <p class="wedding-quote">“Now turning into a beautiful forever 💍
+Join us to witness this magical union.”</p>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <div class="tabs">
+        <button class="tab-button active" onclick="openTab(event, 'Invitation')">Invitation</button>
+        <button class="tab-button" onclick="openTab(event, 'Wedding')">Wedding Venue</button>
+        <button class="tab-button" onclick="openTab(event, 'Reception')">Reception Venue</button>
+    </div>
+
+    <!-- 1. Invitation Tab -->
+    <div id="Invitation" class="tab-content" style="display: block;">
+        
+        <!-- Sub-tabs for Language -->
+        <div class="lang-tabs">
+            <button class="lang-btn active" onclick="switchLanguage('te')">Telugu</button>
+            <button class="lang-btn" onclick="switchLanguage('en')">English</button>
+        </div>
+
+        <!-- Wrapper for Sticky Elements -->
+        <div class="patrika-wrapper">
+            
+            <!-- Left Tracking Elephant -->
+            <div class="elephant-container sticky-left">
+                <img src="elephant.png" class="realistic-elephant" alt="Elephant">
+                <div class="poola-maala">🌺🌿🌺</div>
+            </div>
+
+        <!-- The Traditional Patrika Card -->
+        <div class="details-card patrika-card">
+            
+            <!-- Traditional Decorations (Toranam, Arati Chettu & Elephants) -->
+            <div class="toranam-garland"></div>
+            <div class="banana-tree tree-left"></div>
+            <div class="banana-tree tree-right"></div>
+
+            <!-- TELUGU INVITATION -->
+            <div id="lang-te">
+            <!-- Auspicious Header -->
+            <div class="auspicious-header">
+                <p class="srirastu">శ్రీరస్తు శుభమస్తు అవిఘ్నమస్తు</p>
+                <!-- Traditional Ganesha Image -->
+                <img src="ganesha.png" class="ganesha-icon" alt="Lord Ganesha">
+            </div>
+
+            <h2 class="patrika-title">వివాహ మహోత్సవ ఆహ్వాన శుభలగ్న పత్రిక</h2>
+            
+            <div class="floral-divider">❁ ❀ ❁</div>
+
+            <!-- Date & Panchangam -->
+            <div class="muhurtham-section">
+                <p class="panchangam">స్వస్తిశ్రీ చాంద్రమానేన శ్రీ పరాభవ నామ సంవత్సర<br>చైత్ర మాస బహుళ అష్టమి</p>
+                <p class="muhurtham-date">ది. 10-04-2026 శుక్రవారం రాత్రి గం. 9:09 ని.లకు</p>
+                <p class="lagna">ఉత్తరాషాడ నక్షత్రయుక్త వృశ్చిక లగ్న<br>పుష్కరాంశ శుభ ముహూర్తము నందు</p>
+            </div>
+
+            <p class="ekaika-putrika">మా ఏకైక పుత్రిక</p>
+
+            <!-- Bride & Groom -->
+            <div class="couple-details">
+                <div class="bride">
+                    <p class="prefix">వధువు : చి|| ల|| సౌ||</p>
+                    <h3 class="traditional-name">నవ్య</h3>
+                    <p class="qualification">M.Sc Investigative Ophthalmology</p>
+                </div>
+                
+                <div class="parinayam">పరిణయం</div>
+
+                <div class="groom">
+                    <p class="prefix">వరుడు : చి||</p>
+                    <h3 class="traditional-name">కరుణ్ కుమార్</h3>
+                    <p class="qualification">M.S Cyber Security</p>
+                    <p class="parents" style="line-height: 1.5; padding: 0 10px;">(గుంటూరు జిల్లా, తుళ్లూరు మండలం, మోదుగులింగాయపాలెం గ్రామ వాస్తవ్యులు శ్రీ కరుకుమల్లి శ్రీనివాసరావు - శ్రీమతి నాగలక్ష్మి గార్ల ఏకైక పుత్రుడు)</p>
+                </div>
+            </div>
+
+            <p style="color: #4a3b32; font-size: 1.1em; margin-top: 5px; font-weight: bold;">ల వివాహము జరుపుటకు సుముహూర్తం నిశ్చయించారు.</p>
+
+            <div class="floral-divider">❁ ❀ ❁</div>
+
+            <!-- Vinnapam -->
+            <div class="vinnapam-section">
+                <h4 class="vinnapam-title">విన్నపం</h4>
+                <p class="vinnapam-text">మంగళప్రదమైన వేళలో మాధుర్యమై కలిసిన రెండు హృదయాలు వేద మంత్రాల సాక్షిగా వైవాహిక బంధమై వికసించనున్నది.<br>పెద్దల దీవెనల మధ్య కళ్యాణ శుభసమయంలో మీరు మీ కుటుంబ సమేతంగా విచ్చేసి నూతన వధూవరులను ఆశీర్వదించగలరు.</p>
+            </div>
+
+            <div class="floral-divider">❁ ❀ ❁</div>
+
+            <!-- Venue -->
+            <div class="venue-section">
+                <h4>కళ్యాణ వేదిక</h4>
+                <p>వి స్క్వేర్ కళ్యాణ మండపం, మల్కాపురం,<br>తుళ్లూరు మండలం, గుంటూరు జిల్లా</p>
+            </div>
+
+            <div class="floral-divider">❁ ❀ ❁</div>
+
+            <!-- Reception & Lunch -->
+            <div class="reception-section">
+                <h4>రిసెప్షన్ మరియు విందు (Lunch)</h4>
+                <p>ది. 12-04-2026 ఆదివారం ఉదయం 12:00 గం.ల నుండి</p>
+            <p>వేదిక: కె.ఎన్ కన్వెన్షన్, అయ్యప్ప స్వామి గుడి ప్రక్కన,<br>అయ్యప్ప నగర్ 3వ లైన్, ఆర్.టి.సి కాలనీ ఎక్స్‌టెన్షన్., కాకాని రోడ్, గుంటూరు</p>
+            </div>
+
+            <!-- Ahvaninchuvaru -->
+            <div class="inviters-section">
+                <p class="inviters-label">ఆహ్వానించువారు:</p>
+                <p class="inviters-names">శ్రీ రెడ్డి శివరామయ్య మరియు శ్రీమతి రత్న కుమారి</p>
+            </div>
+            </div>
+
+            <!-- ENGLISH INVITATION -->
+            <div id="lang-en" style="display: none; font-family: 'Playfair Display', serif; font-weight: bold;">
+                <!-- Scroll Rollers (Top) -->
+                <div class="scroll-roller top-roller"></div>
+
+                <!-- Auspicious Header -->
+                <div class="auspicious-header">
+                    <p class="srirastu" style="font-family: 'Playfair Display', serif; font-weight: bold;">Srirastu Shubhamastu Avignamastu</p>
+                    <img src="ganesha.png" class="ganesha-icon" alt="Lord Ganesha">
+                </div>
+
+                <h2 class="patrika-title" style="font-family: 'Playfair Display', serif; font-weight: bold;">Wedding Invitation</h2>
+                
+                <div class="floral-divider">❁ ❀ ❁</div>
+
+                <p class="wedding-quote" style="margin: 20px 0; color: #4a3b32;">"In a moment woven with love, laughter, and blessings, we invite you to celebrate the beginning of our forever."</p>
+
+                <!-- Bride & Groom -->
+                <div class="couple-details">
+                    <div class="bride">
+                        <p class="prefix">Chi. La. Sou.</p>
+                        <h3 class="english-name">Navya</h3>
+                        <p class="qualification">M.Sc Investigative Ophthalmology</p>
+                    </div>
+                    
+                    <div class="parinayam" style="font-family: 'Great Vibes', cursive; font-size: 2.2em; text-transform: lowercase;">with</div>
+
+                    <div class="groom">
+                        <p class="prefix">Chi.</p>
+                        <h3 class="english-name">Karun Kumar</h3>
+                        <p class="qualification">M.S Cyber Security</p>
+                        <p class="parents">S/o Karukumalli Srinivasarao and<br>Srimathi Naga Lakshmi</p>
+                    </div>
+                </div>
+
+                <div class="floral-divider">❁ ❀ ❁</div>
+
+                <!-- Date & Muhurtham -->
+                <div class="muhurtham-section">
+                    <p class="lagna" style="font-size: 1.2em; font-weight: bold; color: #8a252c; margin-bottom: 5px;">Sumuhurtham</p>
+                    <p class="muhurtham-date" style="font-family: 'Playfair Display', serif;">Friday, 10th April 2026 at 9:09 PM</p>
+                </div>
+
+                <!-- Venue -->
+                <div class="venue-section" style="margin-bottom: 20px;">
+                    <h4 style="font-family: 'Playfair Display', serif; font-weight: bold;">Wedding Venue</h4>
+                    <p>V Square Kalyana Mandapam, Malkapuram,<br>Thullur Mandal, Guntur District</p>
+                </div>
+
+                <!-- Reception & Lunch -->
+                <div class="reception-section" style="margin-bottom: 20px;">
+                    <h4 style="font-family: 'Playfair Display', serif; font-weight: bold;">Reception & Lunch</h4>
+                    <p style="font-family: 'Playfair Display', serif;">Sunday, 12th April 2026 from 12:00 noon</p>
+                    <p>Venue: KN Convention, beside Ayyappa Swamy temple,<br>Ayyappa Nagar 3rd line, RTC Colony Extn., Kakani Road, Guntur</p>
+                </div>
+
+                <!-- Compliments -->
+                <div class="compliments-section">
+                    <div class="comp-left">
+                        <p>With best compliments from:</p>
+                        <p><strong>Near & Dear</strong></p>
+                    </div>
+                    <div class="comp-right">
+                        <p>Can't wait to celebrate with you!</p>
+                        <p><strong>Brothers & Sisters</strong></p>
+                    </div>
+                </div>
+
+                <!-- Scroll Rollers (Bottom) -->
+                <div class="scroll-roller bottom-roller"></div>
+            </div>
+
+        </div>
+
+            <!-- Right Tracking Elephant -->
+            <div class="elephant-container sticky-right">
+                <img src="elephant.png" class="realistic-elephant" alt="Elephant">
+                <div class="poola-maala">🌺🌿🌺</div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 2. Wedding Tab -->
+    <div id="Wedding" class="tab-content">
+        <div class="details-card">
+            <h2>Wedding Venue</h2>
+            <p><strong>Date:</strong> Friday, 10th April 2026</p>
+            <p><strong>Muhurtham Time:</strong> 9:09 PM</p>
+            <p><strong>Venue:</strong> V Square Kalyana Mandapam</p>
+            <p><strong>Address:</strong> Malkapuram, Thullur Mandal, Guntur District</p>
+            
+            <!-- Embedded Map & Directions -->
+            <div class="map-container">
+                <iframe src="https://maps.google.com/maps?q=V%20Square%20Kalyana%20Mandapam,%20Malkapuram&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+            </div>
+            <a href="https://share.google/K741mGAqrmedxRDQ8" target="_blank" class="directions-btn">📍 Get Directions</a>
+        </div>
+    </div>
+
+    <!-- 3. Reception Tab -->
+    <div id="Reception" class="tab-content">
+        <div class="details-card">
+            <h2>Reception Venue</h2>
+            <p><strong>Date:</strong> Sunday, 12th April 2026</p>
+            <p><strong>Time:</strong> 11:00 AM</p>
+            <p><strong>Venue:</strong> KN Convention</p>
+            <p><strong>Address:</strong> beside ayyappa swami temple, ayyappa nagar 3rd line, RTC colony Extn., kakani road, Guntur</p>
+
+            <!-- Embedded Map & Directions -->
+            <div class="map-container">
+                <iframe src="https://maps.google.com/maps?q=KN%20Convention,%20Guntur&t=&z=13&ie=UTF8&iwloc=&output=embed" allowfullscreen></iframe>
+            </div>
+            <a href="https://share.google/2rcWQH2zFfjdvrUL9" target="_blank" class="directions-btn">📍 Get Directions</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>Designed and Crafted with ❤️ by <strong>Dinesh</strong></p>
+        <p>For custom invitations, contact:</p>
+        <p class="contact-info">
+            <a href="mailto:reddydinesh3111@gmail.com">✉️ reddydinesh3111@gmail.com</a> | 
+            <a href="tel:+917331179002">📞 +91 73311 79002</a>
+        </p>
+    </footer>
+
+    <!-- Linking the external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
