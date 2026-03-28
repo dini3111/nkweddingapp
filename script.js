@@ -62,9 +62,22 @@ if (document.readyState === 'loading') {
 // Audio playback management
 const bgMusic = document.getElementById('bgMusic');
 const playMusicBtn = document.getElementById('playMusicBtn');
+let isPlaying = false;
+
+function toggleAudio() {
+    if (!bgMusic) return;
+    
+    if (isPlaying) {
+        bgMusic.pause();
+        isPlaying = false;
+        if (playMusicBtn) playMusicBtn.innerHTML = '🔊 Play Music';
+    } else {
+        startAudioPlayback();
+    }
+}
 
 function startAudioPlayback() {
-    if (!bgMusic) return;
+    if (!bgMusic || isPlaying) return;
     
     bgMusic.muted = false;
     bgMusic.volume = 0.3;
@@ -75,44 +88,27 @@ function startAudioPlayback() {
         playPromise
             .then(() => {
                 console.log('✓ Audio playing successfully');
-                // Hide button only if autoplay succeeds
-                if (playMusicBtn) playMusicBtn.style.display = 'none';
+                isPlaying = true;
+                if (playMusicBtn) {
+                    playMusicBtn.style.display = 'block';
+                    playMusicBtn.innerHTML = '🔇 Mute Music';
+                }
             })
             .catch(error => {
                 console.log('✗ Autoplay blocked:', error.message);
-                // Button stays visible as fallback
                 if (playMusicBtn) {
                     playMusicBtn.style.display = 'block';
-                    playMusicBtn.style.opacity = '1';
+                    playMusicBtn.innerHTML = '🔊 Play Music';
                 }
             });
     }
 }
 
-// Try to play on load
-window.addEventListener('load', function() {
-    console.log('Page loaded - attempting audio autoplay');
-    setTimeout(startAudioPlayback, 500);
-});
-
-// Play on user interaction
-function enableAudioOnInteraction() {
-    console.log('User interaction detected - attempting audio playback');
-    startAudioPlayback();
-    // Remove listeners after successful play attempt
-    document.removeEventListener('click', enableAudioOnInteraction);
-    document.removeEventListener('scroll', enableAudioOnInteraction);
-    document.removeEventListener('touchstart', enableAudioOnInteraction);
-}
-
-document.addEventListener('click', enableAudioOnInteraction);
-document.addEventListener('scroll', enableAudioOnInteraction);
-document.addEventListener('touchstart', enableAudioOnInteraction);
-
 // Manual play button
 if (playMusicBtn) {
-    playMusicBtn.addEventListener('click', function() {
-        startAudioPlayback();
+    playMusicBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleAudio();
     });
 }
 

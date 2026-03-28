@@ -749,3 +749,31 @@ h2 {
     background-color: #6b1d22;
     transform: translateY(-2px);
 }
+
+/* --- FOOTER STYLES --- */
+.site-footer {
+    background-color: rgba(253, 248, 245, 0.9); /* Warm Ivory, slightly transparent */
+    border-top: 2px dashed #d9a05b; /* Elegant gold dashed border */
+    padding: 25px 20px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 0.9em;
+    color: #5a4b42;
+    margin-top: 40px;
+}
+.site-footer p {
+    margin: 6px 0;
+}
+.site-footer strong {
+    color: #8a252c;
+}
+.contact-info a {
+    color: #8a252c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.contact-info a:hover {
+    color: #d9a05b;
+    text-decoration: underline;
+}
